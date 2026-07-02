@@ -1,168 +1,178 @@
 # Praxys
 
-> **Execution over intention. Discipline over motivation. Progress over perfection.**
+> **A productivity and social accountability platform focused on helping users turn intentions into consistent action.**
 
-Praxys is a modern productivity and execution platform designed to help individuals transform goals into consistent action through focused work sessions, intelligent task management, habit-building systems, and actionable productivity analytics.
+Praxys is designed to help individuals stay focused, build discipline, maintain consistency, and achieve their goals through task management, focus sessions, streak tracking, progress analytics, and social accountability features.
 
-Unlike traditional productivity tools that primarily focus on planning and organization, Praxys is built around a single philosophy:
-
-> **Productivity is not about planning more. It's about executing consistently.**
+Unlike many productivity tools that focus primarily on planning and organization, Praxys emphasizes **execution, consistency, accountability, and measurable progress**.
 
 ---
 
 # Vision
 
-Most productivity applications help users create plans.
+Most productivity applications help users plan.
 
-Praxys focuses on helping users:
+Praxys helps users execute.
 
-* Execute tasks consistently
-* Build sustainable habits
-* Improve focus and discipline
-* Track measurable progress
-* Develop long-term productive behaviors
+The goal of Praxys is to provide a structured environment where users can:
 
-The ultimate goal of Praxys is to become a personal execution operating system that helps users close the gap between intention and action.
+- Stay focused
+- Build consistent habits
+- Track meaningful progress
+- Remain accountable
+- Achieve long-term goals
 
 ---
 
 # Problem Statement
 
-Modern productivity tools suffer from several common problems:
+Many productivity tools allow users to:
 
-* Users spend more time organizing than executing
-* Task lists become overwhelming
-* Focus sessions lack accountability
-* Progress tracking is often superficial
-* Habit tracking lacks meaningful insights
-* Users lose motivation due to inconsistent progress
+- Create tasks
+- Organize projects
+- Build workflows
+- Manage schedules
 
-Praxys addresses these problems by combining:
+However, they often fail to address the biggest challenge:
 
-* Task management
-* Deep focus sessions
-* Habit and streak systems
-* Productivity analytics
-* Progress visualization
-* Behavioral reinforcement mechanisms
+> **Actually getting the work done consistently.**
+
+Common problems include:
+
+- Procrastination
+- Lack of focus
+- Poor accountability
+- Inconsistent habits
+- Difficulty measuring progress
+- Loss of motivation over time
+
+Praxys aims to solve these problems by combining productivity systems with accountability and behavioral feedback.
 
 ---
 
 # Core Features
 
-## 1. Task Management
+## Task Management
 
-A structured task management system designed for execution rather than simple organization.
+Organize and execute work effectively.
 
-### Features
+Features:
 
-* Create, edit, and delete tasks
-* Task prioritization
-* Due dates
-* Categories and labels
-* Status management
-* Task completion tracking
-* Task history
-* Recurring tasks
-* Goal-linked tasks
-
----
-
-## 2. Focus Sessions
-
-Built-in focus sessions help users maintain concentration and reduce distractions.
-
-### Features
-
-* Pomodoro timer
-* Custom focus durations
-* Break management
-* Session history
-* Daily focus goals
-* Deep work tracking
-* Focus analytics
-* Session interruption tracking
+- Create, edit, and delete tasks
+- Task priorities
+- Categories and tags
+- Due dates
+- Recurring tasks
+- Task history
+- Subtasks
+- Goal-linked tasks
 
 ---
 
-## 3. Streak Tracking
+## Goals Management
 
-Build discipline through consistency.
+Break long-term objectives into manageable actions.
 
-### Features
+Features:
 
-* Daily streak tracking
-* Weekly streaks
-* Monthly streaks
-* Habit consistency scoring
-* Longest streak records
-* Recovery mechanisms
-* Achievement milestones
+- Short-term goals
+- Long-term goals
+- Milestones
+- Progress tracking
+- Goal completion analytics
 
 ---
 
-## 4. Productivity Analytics
+## Focus Sessions
 
-Transform productivity data into actionable insights.
+Improve concentration and reduce distractions.
 
-### Features
+Features:
 
-* Daily productivity score
-* Weekly performance reports
-* Monthly summaries
-* Focus time analytics
-* Task completion trends
-* Consistency metrics
-* Habit performance analysis
-* Goal achievement statistics
-
----
-
-## 5. Progress Dashboard
-
-A centralized dashboard providing complete visibility into user progress.
-
-### Features
-
-* Current tasks overview
-* Focus statistics
-* Productivity score
-* Active streaks
-* Goal progress
-* Weekly trends
-* Monthly performance
-* Historical analytics
+- Pomodoro timer
+- Deep work sessions
+- Custom timers
+- Break management
+- Session history
+- Focus analytics
+- Daily focus targets
 
 ---
 
-## 6. Goal Management
+## Habit & Streak Tracking
 
-Break ambitious goals into achievable actions.
+Build consistency through repeated action.
 
-### Features
+Features:
 
-* Short-term goals
-* Long-term goals
-* Milestones
-* Progress tracking
-* Completion percentages
-* Goal analytics
-* Goal-task relationships
+- Habit tracking
+- Daily check-ins
+- Streak management
+- Longest streak records
+- Weekly and monthly consistency tracking
+- Habit analytics
 
 ---
 
-## 7. Notifications & Reminders
+## Productivity Analytics
 
-Maintain consistency through timely reminders.
+Measure performance and identify patterns.
 
-### Features
+Features:
 
-* Task reminders
-* Focus session reminders
-* Daily check-ins
-* Streak alerts
-* Weekly summaries
-* Goal reminders
+- Productivity scores
+- Task completion trends
+- Focus time analysis
+- Consistency metrics
+- Weekly reports
+- Monthly reports
+- Progress insights
+
+---
+
+## Dashboard
+
+A centralized view of user progress.
+
+Features:
+
+- Active tasks
+- Goals overview
+- Focus statistics
+- Streak information
+- Productivity summaries
+- Performance trends
+
+---
+
+## Social Accountability
+
+Stay motivated through social reinforcement.
+
+Features:
+
+- Friends
+- Accountability partners
+- Shared goals
+- Activity feeds
+- Progress sharing
+- Communities
+- Group challenges
+
+---
+
+## Gamification
+
+Encourage consistency through rewards.
+
+Features:
+
+- Experience points (XP)
+- Levels
+- Achievements
+- Badges
+- Milestones
+- Leaderboards
 
 ---
 
@@ -170,47 +180,15 @@ Maintain consistency through timely reminders.
 
 Planned features include:
 
-* AI productivity coach
-* Smart task prioritization
-* Focus prediction system
-* Behavioral analytics
-* Personalized recommendations
-* Team productivity spaces
-* Collaborative goals
-* Accountability partners
-* Calendar integration
-* Wearable integrations
-* Voice assistant support
-* Mobile applications
-* Offline mode
-* Productivity benchmarking
-
----
-
-# System Architecture
-
-```text
-                ┌──────────────────┐
-                │   React Client   │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │   Express API    │
-                └────────┬─────────┘
-                         │
-          ┌──────────────┼──────────────┐
-          ▼              ▼              ▼
-     PostgreSQL       Redis         Background Jobs
-          │              │               │
-          └──────────────┼───────────────┘
-                         ▼
-                  Analytics Engine
-                         │
-                         ▼
-                    AI Services
-                   (Future Phase)
-```
+- AI productivity assistant
+- Personalized recommendations
+- Behavioral analytics
+- Burnout detection
+- Smart scheduling
+- Mobile applications
+- Calendar integrations
+- Team workspaces
+- Voice support
 
 ---
 
@@ -218,183 +196,175 @@ Planned features include:
 
 ## Frontend
 
-| Technology     | Purpose                 |
-| -------------- | ----------------------- |
-| React          | User Interface          |
-| TypeScript     | Type Safety             |
-| Tailwind CSS   | Styling                 |
-| React Router   | Routing                 |
-| TanStack Query | Server State Management |
-| Zustand        | Client State Management |
+- React
+- TypeScript
+- Tailwind CSS
+- TanStack Query
+- Zustand
+- React Router
 
 ---
 
 ## Backend
 
-| Technology | Purpose             |
-| ---------- | ------------------- |
-| Node.js    | Runtime Environment |
-| Express.js | API Framework       |
-| TypeScript | Backend Type Safety |
-| Zod        | Validation          |
-| BullMQ     | Background Jobs     |
+- Node.js
+- Express.js
+- TypeScript
+- Zod
+- BullMQ
 
 ---
 
 ## Database
 
-| Technology | Purpose            |
-| ---------- | ------------------ |
-| PostgreSQL | Primary Database   |
-| Prisma ORM | Database ORM       |
-| Redis      | Caching and Queues |
+- PostgreSQL
+- Prisma ORM
+- Redis
 
 ---
 
 ## Authentication
 
-* JWT Access Tokens
-* Refresh Tokens
-* HTTP-only Cookies
-* Role-Based Access Control (RBAC)
-* Session Management
+- JWT Access Tokens
+- Refresh Tokens
+- HTTP-only Cookies
 
 ---
 
 ## Infrastructure
 
-* Docker
-* Docker Compose
-* GitHub Actions
-* Railway / AWS / Render
-* Nginx
-* Pino Logging
-
----
-
-## Future AI Stack
-
-| Technology   | Purpose         |
-| ------------ | --------------- |
-| Python       | AI Services     |
-| FastAPI      | AI API Layer    |
-| Scikit-Learn | Analytics       |
-| Transformers | LLM Features    |
-| LangChain    | Agent Workflows |
+- Docker
+- GitHub Actions
+- Railway / AWS
+- Nginx
 
 ---
 
 # Project Structure
 
-```bash
+```text
 praxys/
 │
-├── client/
-│   ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   ├── services/
-│   ├── store/
-│   └── assets/
+├── apps/
+│   ├── web/
+│   ├── api/
+│   └── worker/
 │
-├── server/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   ├── validators/
-│   │   ├── jobs/
-│   │   └── config/
-│   │
+├── packages/
+│   ├── shared/
+│   ├── ui/
+│   ├── config/
+│   └── sdk/
+│
+├── database/
 │   └── prisma/
 │
+├── infrastructure/
+│
 ├── docs/
-├── docker/
-├── scripts/
-└── README.md
+│
+├── dev_docs/
+│   ├── PRD.md
+│   ├── ARCHITECTURE.md
+│   ├── DATABASE_DESIGN.md
+│   ├── API_SPECIFICATION.md
+│   ├── USER_STORIES.md
+│   ├── FEATURES.md
+│   ├── ROADMAP.md
+│   ├── SYSTEM_DESIGN.md
+│   └── WIREFRAMES.md
+│
+└── tests/
 ```
 
 ---
 
-# Database Design
+# Architecture
 
-Core entities include:
-
-* Users
-* Tasks
-* Goals
-* Focus Sessions
-* Streaks
-* Habits
-* Analytics
-* Notifications
-* Achievements
-* Settings
+```text
+                 React Frontend
+                        │
+                        ▼
+                 Express API
+                        │
+         ┌──────────────┼──────────────┐
+         ▼              ▼              ▼
+    PostgreSQL       Redis         Workers
+         │              │              │
+         └──────────────┼──────────────┘
+                        ▼
+                  Analytics Layer
+```
 
 ---
 
 # Security Features
 
-* Password hashing using bcrypt
-* JWT authentication
-* Refresh token rotation
-* HTTP-only cookies
-* CORS protection
-* Input validation
-* Rate limiting
-* SQL injection protection
-* XSS prevention
-* CSRF protection
-* Helmet security middleware
+- JWT authentication
+- Refresh token rotation
+- HTTP-only cookies
+- Password hashing
+- Input validation
+- Rate limiting
+- CORS protection
+- Secure headers
+- Role-based access control
 
 ---
 
-# Performance Optimizations
+# Performance Features
 
-* Redis caching
-* Query optimization
-* Database indexing
-* Pagination
-* Background processing
-* Lazy loading
-* Code splitting
-* CDN support
+- Redis caching
+- Database indexing
+- Background jobs
+- Pagination
+- Query optimization
+- Lazy loading
+- Code splitting
 
 ---
 
 # Development Roadmap
 
-## Phase 1
+## Phase 1 — MVP
 
-* Authentication
-* User management
-* Task management
+- Authentication
+- Task management
+- Goal management
+- Focus sessions
+- Habit tracking
+- Streak tracking
+- Dashboard
+- Basic analytics
+
+---
 
 ## Phase 2
 
-* Focus sessions
-* Streak tracking
-* Habit system
+- Friends
+- Activity feeds
+- Accountability partners
+- Shared goals
+- Challenges
+
+---
 
 ## Phase 3
 
-* Analytics engine
-* Progress dashboard
+- Communities
+- Leaderboards
+- Achievements
+- Gamification
+- Advanced analytics
+
+---
 
 ## Phase 4
 
-* Notifications
-* Background jobs
-* Performance optimization
-
-## Phase 5
-
-* AI productivity assistant
-* Recommendation engine
-* Behavioral analytics
+- AI assistant
+- Behavioral analytics
+- Personalized recommendations
+- Predictive insights
 
 ---
 
@@ -411,11 +381,11 @@ cd praxys
 
 ```bash
 # Frontend
-cd client
+cd apps/web
 npm install
 
 # Backend
-cd ../server
+cd ../api
 npm install
 ```
 
@@ -432,13 +402,9 @@ PORT=
 CLIENT_URL=
 ```
 
-## Run Development Server
+## Run Development Environment
 
 ```bash
-# Frontend
-npm run dev
-
-# Backend
 npm run dev
 ```
 
@@ -448,35 +414,20 @@ npm run dev
 
 ```bash
 npm run test
-npm run test:coverage
 npm run lint
 npm run format
 ```
 
 ---
 
-# Deployment
-
-Supported deployment platforms:
-
-* AWS
-* Railway
-* Render
-* DigitalOcean
-* Fly.io
-* Vercel (Frontend)
-* Cloudflare
-
----
-
 # Contributing
 
-Contributions are welcome.
+Contributions, suggestions, and feedback are welcome.
 
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
-4. Push the branch
+4. Push your branch
 5. Open a pull request
 
 ---
@@ -487,19 +438,10 @@ This project is licensed under the MIT License.
 
 ---
 
-# Philosophy
-
-> "Motivation is temporary. Systems create consistency."
-
-Praxys exists to help users build systems that turn ambition into measurable progress.
-
----
-
 # Author
 
 **Md. Kamran Alam**
 
-* Full Stack Developer
-* Software Engineer
-* Entrepreneur
-* Builder of systems focused on execution and long-term growth
+- Full Stack Developer
+- Software Engineer
+- Entrepreneur
