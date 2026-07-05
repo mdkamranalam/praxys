@@ -1,440 +1,106 @@
 # Praxys
 
-> **A productivity and social accountability platform focused on helping users turn intentions into consistent action.**
+Praxys is a productivity and social accountability platform concept designed to help people turn intentions into consistent action. The repository currently contains the initial project scaffold and the development documentation needed to build the product.
 
-Praxys is designed to help individuals stay focused, build discipline, maintain consistency, and achieve their goals through task management, focus sessions, streak tracking, progress analytics, and social accountability features.
+## Overview
 
-Unlike many productivity tools that focus primarily on planning and organization, Praxys emphasizes **execution, consistency, accountability, and measurable progress**.
+The goal of Praxys is to help users:
 
----
+- stay focused
+- build consistent habits
+- track progress over time
+- stay accountable
+- complete meaningful work regularly
 
-# Vision
+## Current status
 
-Most productivity applications help users plan.
+This project is still in an early stage. The repository currently includes:
 
-Praxys helps users execute.
+- a React + Vite frontend in [apps/web](apps/web)
+- an initial backend package in [apps/api](apps/api)
+- private development documentation in [dev_docs](dev_docs)
 
-The goal of Praxys is to provide a structured environment where users can:
+The current frontend is still the default Vite starter UI, so the full Praxys experience is not implemented yet.
 
-- Stay focused
-- Build consistent habits
-- Track meaningful progress
-- Remain accountable
-- Achieve long-term goals
+## Tech stack
 
----
-
-# Problem Statement
-
-Many productivity tools allow users to:
-
-- Create tasks
-- Organize projects
-- Build workflows
-- Manage schedules
-
-However, they often fail to address the biggest challenge:
-
-> **Actually getting the work done consistently.**
-
-Common problems include:
-
-- Procrastination
-- Lack of focus
-- Poor accountability
-- Inconsistent habits
-- Difficulty measuring progress
-- Loss of motivation over time
-
-Praxys aims to solve these problems by combining productivity systems with accountability and behavioral feedback.
-
----
-
-# Core Features
-
-## Task Management
-
-Organize and execute work effectively.
-
-Features:
-
-- Create, edit, and delete tasks
-- Task priorities
-- Categories and tags
-- Due dates
-- Recurring tasks
-- Task history
-- Subtasks
-- Goal-linked tasks
-
----
-
-## Goals Management
-
-Break long-term objectives into manageable actions.
-
-Features:
-
-- Short-term goals
-- Long-term goals
-- Milestones
-- Progress tracking
-- Goal completion analytics
-
----
-
-## Focus Sessions
-
-Improve concentration and reduce distractions.
-
-Features:
-
-- Pomodoro timer
-- Deep work sessions
-- Custom timers
-- Break management
-- Session history
-- Focus analytics
-- Daily focus targets
-
----
-
-## Habit & Streak Tracking
-
-Build consistency through repeated action.
-
-Features:
-
-- Habit tracking
-- Daily check-ins
-- Streak management
-- Longest streak records
-- Weekly and monthly consistency tracking
-- Habit analytics
-
----
-
-## Productivity Analytics
-
-Measure performance and identify patterns.
-
-Features:
-
-- Productivity scores
-- Task completion trends
-- Focus time analysis
-- Consistency metrics
-- Weekly reports
-- Monthly reports
-- Progress insights
-
----
-
-## Dashboard
-
-A centralized view of user progress.
-
-Features:
-
-- Active tasks
-- Goals overview
-- Focus statistics
-- Streak information
-- Productivity summaries
-- Performance trends
-
----
-
-## Social Accountability
-
-Stay motivated through social reinforcement.
-
-Features:
-
-- Friends
-- Accountability partners
-- Shared goals
-- Activity feeds
-- Progress sharing
-- Communities
-- Group challenges
-
----
-
-## Gamification
-
-Encourage consistency through rewards.
-
-Features:
-
-- Experience points (XP)
-- Levels
-- Achievements
-- Badges
-- Milestones
-- Leaderboards
-
----
-
-# Future Features
-
-Planned features include:
-
-- AI productivity assistant
-- Personalized recommendations
-- Behavioral analytics
-- Burnout detection
-- Smart scheduling
-- Mobile applications
-- Calendar integrations
-- Team workspaces
-- Voice support
-
----
-
-# Tech Stack
-
-## Frontend
+### Frontend
 
 - React
 - TypeScript
-- Tailwind CSS
-- TanStack Query
-- Zustand
-- React Router
+- Vite
 
----
-
-## Backend
+### Backend
 
 - Node.js
-- Express.js
 - TypeScript
-- Zod
-- BullMQ
 
----
+## Getting started
 
-## Database
+### Prerequisites
 
-- PostgreSQL
-- Prisma ORM
-- Redis
+- Node.js 20 or newer
+- npm
 
----
-
-## Authentication
-
-- JWT Access Tokens
-- Refresh Tokens
-- HTTP-only Cookies
-
----
-
-## Infrastructure
-
-- Docker
-- GitHub Actions
-- Railway / AWS
-- Nginx
-
----
-
-# Project Structure
-
-```text
-praxys/
-│
-├── apps/
-│   ├── web/
-│   ├── api/
-│   └── worker/
-│
-├── packages/
-│   ├── shared/
-│   ├── ui/
-│   ├── config/
-│   └── sdk/
-│
-├── database/
-│   └── prisma/
-│
-├── infrastructure/
-│
-├── docs/
-│
-├── dev_docs/
-│   ├── PRD.md
-│   ├── ARCHITECTURE.md
-│   ├── DATABASE_DESIGN.md
-│   ├── API_SPECIFICATION.md
-│   ├── USER_STORIES.md
-│   ├── FEATURES.md
-│   ├── ROADMAP.md
-│   ├── SYSTEM_DESIGN.md
-│   └── WIREFRAMES.md
-│
-└── tests/
-```
-
----
-
-# Architecture
-
-```text
-                 React Frontend
-                        │
-                        ▼
-                 Express API
-                        │
-         ┌──────────────┼──────────────┐
-         ▼              ▼              ▼
-    PostgreSQL       Redis         Workers
-         │              │              │
-         └──────────────┼──────────────┘
-                        ▼
-                  Analytics Layer
-```
-
----
-
-# Security Features
-
-- JWT authentication
-- Refresh token rotation
-- HTTP-only cookies
-- Password hashing
-- Input validation
-- Rate limiting
-- CORS protection
-- Secure headers
-- Role-based access control
-
----
-
-# Performance Features
-
-- Redis caching
-- Database indexing
-- Background jobs
-- Pagination
-- Query optimization
-- Lazy loading
-- Code splitting
-
----
-
-# Development Roadmap
-
-## Phase 1 — MVP
-
-- Authentication
-- Task management
-- Goal management
-- Focus sessions
-- Habit tracking
-- Streak tracking
-- Dashboard
-- Basic analytics
-
----
-
-## Phase 2
-
-- Friends
-- Activity feeds
-- Accountability partners
-- Shared goals
-- Challenges
-
----
-
-## Phase 3
-
-- Communities
-- Leaderboards
-- Achievements
-- Gamification
-- Advanced analytics
-
----
-
-## Phase 4
-
-- AI assistant
-- Behavioral analytics
-- Personalized recommendations
-- Predictive insights
-
----
-
-# Installation
-
-## Clone Repository
+### Frontend
 
 ```bash
-git clone https://github.com/yourusername/praxys.git
-cd praxys
-```
-
-## Install Dependencies
-
-```bash
-# Frontend
 cd apps/web
 npm install
-
-# Backend
-cd ../api
-npm install
-```
-
-## Environment Variables
-
-Create a `.env` file:
-
-```env
-DATABASE_URL=
-REDIS_URL=
-JWT_SECRET=
-JWT_REFRESH_SECRET=
-PORT=
-CLIENT_URL=
-```
-
-## Run Development Environment
-
-```bash
 npm run dev
 ```
 
----
-
-# Testing
+### Backend
 
 ```bash
-npm run test
-npm run lint
-npm run format
+cd apps/api
+npm install
+npm test
 ```
 
----
+## Project structure
 
-# Contributing
+```text
+praxys/
+├── apps/
+│   ├── web/
+│   └── api/
+├── dev_docs/
+├── docs/
+└── README.md
+```
 
-Contributions, suggestions, and feedback are welcome.
+## Documentation
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push your branch
-5. Open a pull request
+The main documentation files are:
 
----
+- [README.md](README.md) — project overview and setup
+<!-- - [dev_docs/PRD.md](dev_docs/PRD.md) — product requirements
+- [dev_docs/PROJECT_CONTEXT.md](dev_docs/PROJECT_CONTEXT.md) — product context and principles
+- [dev_docs/DEVELOPMENT.md](dev_docs/DEVELOPMENT.md) — development workflow and contributor notes
+- [dev_docs/ARCHITECTURE.md](dev_docs/ARCHITECTURE.md) — architecture direction -->
 
-# License
+<!-- > The files in [dev_docs](dev_docs) are intended for internal development use and are not meant for public-facing product documentation. -->
 
-This project is licensed under the MIT License.
+## Development roadmap
+
+1. Build the first real product screens in the frontend
+2. Implement authentication and user profiles
+3. Add task and goal management
+4. Add focus sessions, habits, and analytics
+5. Expand into social accountability features
+
+## Contribution notes
+
+When contributing:
+
+- keep the implementation and documentation aligned
+- update the relevant development docs whenever the project changes
+- keep the private development documentation useful for future work
+
+## License
+
+This project is currently under development and does not yet have a final release license.
 
 ---
 
