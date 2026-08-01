@@ -1,6 +1,17 @@
 # Praxys
 
-Praxys is a productivity and social accountability platform concept designed to help people turn intentions into consistent action. The repository currently contains the initial project scaffold and the development documentation needed to build the product.
+Praxys is a productivity and social accountability platform designed to help people turn intentions into consistent action. This repository contains the project scaffold, documentation, and open source guidance needed to build the product.
+
+## Open Source Vision
+
+Praxys is developed as an open source product with a public roadmap and contributor-friendly documentation.
+
+Goals:
+
+- invite community feedback and contributions
+- build trust through transparent development
+- accelerate product improvement through shared ownership
+- make a useful productivity tool available to a wider audience
 
 ## Overview
 
@@ -14,13 +25,14 @@ The goal of Praxys is to help users:
 
 ## Current status
 
-This project is still in an early stage. The repository currently includes:
+This project is in an early stage. It currently includes:
 
 - a React + Vite frontend in [apps/web](apps/web)
 - an initial backend package in [apps/api](apps/api)
-- private development documentation in [dev_docs](dev_docs)
+- public-facing documentation in [docs/](docs)
+- internal development planning in [dev_docs/](dev_docs)
 
-The current frontend is still the default Vite starter UI, so the full Praxys experience is not implemented yet.
+The current frontend is still mostly starter content, and the backend is scaffolded. The full Praxys experience is not implemented yet.
 
 ## Tech stack
 
@@ -41,6 +53,7 @@ The current frontend is still the default Vite starter UI, so the full Praxys ex
 
 - Node.js 20 or newer
 - npm
+- Git
 
 ### Frontend
 
@@ -58,6 +71,40 @@ npm install
 npm test
 ```
 
+### Notes
+
+- Use `.env.example` files to share configuration patterns without exposing secrets.
+- The backend is under active development, so API behavior may change.
+
+## Public documentation
+
+- [Getting Started](docs/getting-started.md)
+- [Contributing](docs/contributing.md)
+- [Roadmap](docs/roadmap.md)
+- [Open Source Guide](docs/open-source-guide.md)
+
+## Internal documentation
+
+The following files are internal planning documents and are intended for the core team:
+
+- `dev_docs/DEVELOPMENT.md`
+- `dev_docs/TASKS.md`
+- `dev_docs/ROADMAP.md`
+- `dev_docs/PRD.md`
+
+## Contribution guide
+
+Praxys welcomes contributions from the community.
+
+- open issues for bugs, enhancements, or documentation updates
+- work from `develop` and keep feature branches small
+- create branches with clear names like `feature/<name>` or `fix/<name>`
+- include documentation updates in every PR
+- keep frontend and backend work separated when possible
+- add tests for new behavior
+
+See [docs/contributing.md](docs/contributing.md) for the full contribution workflow.
+
 ## Project structure
 
 ```text
@@ -65,22 +112,11 @@ praxys/
 ├── apps/
 │   ├── web/
 │   └── api/
-├── dev_docs/
-├── docs/
+├── docs/         # public-facing docs
+├── dev_docs/     # internal development planning
+├── LICENSE
 └── README.md
 ```
-
-## Documentation
-
-The main documentation files are:
-
-- [README.md](README.md) — project overview and setup
-<!-- - [dev_docs/PRD.md](dev_docs/PRD.md) — product requirements
-- [dev_docs/PROJECT_CONTEXT.md](dev_docs/PROJECT_CONTEXT.md) — product context and principles
-- [dev_docs/DEVELOPMENT.md](dev_docs/DEVELOPMENT.md) — development workflow and contributor notes
-- [dev_docs/ARCHITECTURE.md](dev_docs/ARCHITECTURE.md) — architecture direction -->
-
-<!-- > The files in [dev_docs](dev_docs) are intended for internal development use and are not meant for public-facing product documentation. -->
 
 ## Development roadmap
 
@@ -89,18 +125,18 @@ The main documentation files are:
 3. Add task and goal management
 4. Add focus sessions, habits, and analytics
 5. Expand into social accountability features
+6. Publish the open source product and invite contributions
 
-## Contribution notes
+## Open source launch path
 
-When contributing:
-
-- keep the implementation and documentation aligned
-- update the relevant development docs whenever the project changes
-- keep the private development documentation useful for future work
+- prepare public docs and contribution guidance
+- publish the repository with the MIT license
+- track progress with weekly and monthly milestones
+- build a community around features, issues, and contributions
 
 ## License
 
-This project is currently under development and does not yet have a final release license.
+This project is released under the MIT License. See [LICENSE](LICENSE).
 
 ---
 
