@@ -125,3 +125,4 @@ dev_docs/
 *.old
 *.orig
 *.rej
+IMPLEMENTATION_PLAN.md
