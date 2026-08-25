@@ -1,23 +1,25 @@
-import express from 'express';
+import cors from "cors";
+import express from "express";
 
 import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('✅ Praxys server is running...');
+app.get("/", (req, res) => {
+  res.send("✅ Praxys server is running...");
 });
 
 /**
  * GET /api/health
  */
-app.get('/api/health', (req, res) => {
+app.get("/api/health", (req, res) => {
   res.json({
-    service: 'praxys-api',
-    status: 'ok',
+    service: "praxys-api",
+    status: "ok",
     timestamp: new Date().toLocaleString(),
   });
 });
