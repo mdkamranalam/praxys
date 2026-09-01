@@ -1,149 +1,165 @@
 # Praxys
 
-Praxys is a productivity and social accountability platform designed to help people turn intentions into consistent action. This repository contains the project scaffold, documentation, and open source guidance needed to build the product.
+Praxys is a modern productivity and social accountability platform designed to help people turn intentions into consistent action.
 
-## Open Source Vision
+---
 
-Praxys is developed as an open source product with a public roadmap and contributor-friendly documentation.
+## 🌟 Open Source Vision
 
-Goals:
+Praxys is developed as an open source product with transparent planning, clean architecture, and contributor-friendly documentation.
 
-- invite community feedback and contributions
-- build trust through transparent development
-- accelerate product improvement through shared ownership
-- make a useful productivity tool available to a wider audience
+**Core Objectives:**
+- Help users stay focused, track tasks, and build lasting habits.
+- Foster social accountability with shared goals and progress tracking.
+- Build in public with high code quality, modular architecture, and modern developer tooling.
 
-## Overview
+---
 
-The goal of Praxys is to help users:
+## 🛠️ Tech Stack & Architecture
 
-- stay focused
-- build consistent habits
-- track progress over time
-- stay accountable
-- complete meaningful work regularly
+### Backend (`apps/api`)
+- **Runtime & Framework:** Node.js (v20+), Express.js, TypeScript (ESNext)
+- **Database & ORM:** PostgreSQL, Prisma ORM
+- **Authentication & Security:** JWT (JSON Web Tokens), `bcrypt` password hashing, custom `auth.middleware`
+- **Tooling:** `tsx` (live dev server), `tsc`, `cors`, `dotenv`
 
-## Current status
+### Frontend (`apps/web`)
+- **Framework & Build:** React 19, Vite, TypeScript
+- **Routing & State:** React Router DOM (v7), React Hooks
+- **Styling:** Tailwind CSS
+- **HTTP Client:** Axios
 
-This project is in an early stage. It currently includes:
+---
 
-- a React + Vite frontend in [apps/web](apps/web)
-- an initial backend package in [apps/api](apps/api)
-- public-facing documentation in [docs/](docs)
-- internal development planning in [dev_docs/](dev_docs)
+## 🚀 Current Implementation Status
 
-The current frontend is still mostly starter content, and the backend is scaffolded. The full Praxys experience is not implemented yet.
+| Feature Area | Status | Endpoints / Components |
+| :--- | :--- | :--- |
+| **Database Schema** | ✅ Implemented | PostgreSQL + Prisma: `User` and `Task` relational models |
+| **User Authentication** | ✅ Implemented | `POST /api/auth/register`, `POST /api/auth/login` |
+| **Protected JWT Middleware** | ✅ Implemented | `apps/api/src/middlewares/auth.middleware.ts` |
+| **Task Management API** | ✅ Implemented | `GET /api/tasks`, `POST /api/tasks`, `PATCH /api/tasks/:id`, `DELETE /api/tasks/:id` |
+| **Frontend Auth Pages** | ✅ Implemented | `Home`, `Login`, `Register` with React Router navigation & token persistence |
+| **Frontend Task Dashboard** | 🔄 In Progress | Protected task board & creation UI (Week 4 sprint) |
 
-## Tech stack
+---
 
-### Frontend
-
-- React
-- TypeScript
-- Vite
-
-### Backend
-
-- Node.js
-- TypeScript
-
-## Getting started
+## 🏁 Getting Started
 
 ### Prerequisites
+- **Node.js:** v20+
+- **npm:** v10+
+- **PostgreSQL:** Running locally or hosted (e.g. Supabase, Neon, Docker)
 
-- Node.js 20 or newer
-- npm
-- Git
+---
 
-### Frontend
+### Backend Setup (`apps/api`)
 
-```bash
-cd apps/web
-npm install
-npm run dev
-```
+1. Navigate to the backend directory:
+   ```bash
+   cd apps/api
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure environment variables in `.env`:
+   ```env
+   PORT=8000
+   DATABASE_URL="postgresql://user:password@localhost:5432/praxys?schema=public"
+   DIRECT_URL="postgresql://user:password@localhost:5432/praxys?schema=public"
+   JWT_SECRET="your_secure_jwt_secret"
+   ```
+4. Run Prisma database migrations and generate client:
+   ```bash
+   npx prisma migrate dev
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   The API will be available at `http://localhost:8000`.
 
-### Backend
+---
 
-```bash
-cd apps/api
-npm install
-npm test
-```
+### Frontend Setup (`apps/web`)
 
-### Notes
+1. Navigate to the frontend directory:
+   ```bash
+   cd apps/web
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite dev server:
+   ```bash
+   npm run dev
+   ```
+   The web application will be accessible at `http://localhost:5173`.
 
-- Use `.env.example` files to share configuration patterns without exposing secrets.
-- The backend is under active development, so API behavior may change.
+---
 
-## Public documentation
+## 📡 API Overview
 
-- [Getting Started](docs/getting-started.md)
-- [Contributing](docs/contributing.md)
-- [Roadmap](docs/roadmap.md)
-- [Open Source Guide](docs/open-source-guide.md)
+All protected routes require the header `Authorization: Bearer <token>`.
 
-## Internal documentation
+### Authentication
+- `POST /api/auth/register` — Create a new account (`name`, `email`, `password`)
+- `POST /api/auth/login` — Sign in and receive a JWT token (`email`, `password`)
 
-The following files are internal planning documents and are intended for the core team:
+### Tasks (Protected)
+- `GET /api/tasks` — List all tasks for the logged-in user
+- `POST /api/tasks` — Create a new task (`title`, `description?`)
+- `PATCH /api/tasks/:id` — Update task details or toggle completion (`title?`, `description?`, `isCompleted?`)
+- `DELETE /api/tasks/:id` — Delete a task owned by the user
 
-- `dev_docs/DEVELOPMENT.md`
-- `dev_docs/TASKS.md`
-- `dev_docs/ROADMAP.md`
-- `dev_docs/PRD.md`
+### System Health
+- `GET /` — API root verification
+- `GET /api/health` — Service health and timestamp status
 
-## Contribution guide
+---
 
-Praxys welcomes contributions from the community.
-
-- open issues for bugs, enhancements, or documentation updates
-- work from `develop` and keep feature branches small
-- create branches with clear names like `feature/<name>` or `fix/<name>`
-- include documentation updates in every PR
-- keep frontend and backend work separated when possible
-- add tests for new behavior
-
-See [docs/contributing.md](docs/contributing.md) for the full contribution workflow.
-
-## Project structure
+## 📁 Repository Structure
 
 ```text
 praxys/
 ├── apps/
-│   ├── web/
-│   └── api/
-├── docs/         # public-facing docs
-├── dev_docs/     # internal development planning
+│   ├── api/             # Express.js REST API with Prisma ORM
+│   │   ├── prisma/      # Schema definitions & migrations
+│   │   └── src/
+│   │       ├── middlewares/  # JWT Auth Middleware
+│   │       ├── routes/       # Auth and Task route controllers
+│   │       └── server.ts     # Express server entry point
+│   └── web/             # Vite + React single-page frontend
+│       └── src/
+│           ├── components/   # UI Navbar & reusable components
+│           ├── pages/        # Home, Login, Register, Dashboard
+│           └── App.tsx       # Route configurations
+├── docs/                # Public open-source and setup guides
+├── dev_docs/            # Architecture, Database, & Task specs
 ├── LICENSE
 └── README.md
 ```
 
-## Development roadmap
+---
 
-1. Build the first real product screens in the frontend
-2. Implement authentication and user profiles
-3. Add task and goal management
-4. Add focus sessions, habits, and analytics
-5. Expand into social accountability features
-6. Publish the open source product and invite contributions
+## 🗺️ Roadmap & Sprint Progress
 
-## Open source launch path
-
-- prepare public docs and contribution guidance
-- publish the repository with the MIT license
-- track progress with weekly and monthly milestones
-- build a community around features, issues, and contributions
-
-## License
-
-This project is released under the MIT License. See [LICENSE](LICENSE).
+- **Week 1:** Database setup & Prisma `User` schema + Registration API ✅
+- **Week 2:** React Router navigation + Login API & JWT token handling ✅
+- **Week 3:** JWT Auth Middleware + Task CRUD API (`GET`, `POST`, `PATCH`, `DELETE`) ✅
+- **Week 4:** Frontend Task Dashboard, Protected Routes & API Integration 🔄
 
 ---
 
-# Author
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👤 Author
 
 **Md. Kamran Alam**
-
-- Full Stack Developer
-- Software Engineer
-- Entrepreneur
+- Software Developer & AI/ML Engineer

@@ -1,81 +1,87 @@
 # Getting Started
 
-Welcome to Praxys. This document explains how to set up the project locally and run the frontend and backend.
+Welcome to Praxys. This document explains how to set up the project locally, run database migrations, and start both the frontend and backend servers.
 
-## Prerequisites
+---
 
-- Node.js 20 or newer
-- npm
-- Git
-- Docker (optional, recommended for PostgreSQL/Redis)
+## 🛠️ Prerequisites
 
-## Clone the repository
+- **Node.js:** v20 or newer (`node -v`)
+- **npm:** v10 or newer (`npm -v`)
+- **Git:** (`git --version`)
+- **PostgreSQL:** Running locally or cloud-hosted database (e.g., Supabase, Neon, Docker)
+
+---
+
+## 📥 1. Clone the Repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/mdkamranalam/praxys.git
 cd praxys
 ```
 
-## Install dependencies
+---
 
-### Frontend
+## ⚙️ 2. Configure Backend (`apps/api`)
 
-```bash
-cd apps/web
-npm install
-```
+1. Go to the backend folder:
+   ```bash
+   cd apps/api
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file from `.env.example`:
+   ```env
+   PORT=8000
+   DATABASE_URL="postgresql://postgres:password@localhost:5432/praxys?schema=public"
+   DIRECT_URL="postgresql://postgres:password@localhost:5432/praxys?schema=public"
+   JWT_SECRET="your_custom_jwt_secret"
+   ```
+4. Run Prisma database migrations to create the `User` and `Task` tables:
+   ```bash
+   npx prisma migrate dev
+   ```
+5. Start the backend API server:
+   ```bash
+   npm run dev
+   ```
+   The API is now running at `http://localhost:8000`.
 
-### Backend
+---
 
-```bash
-cd apps/api
-npm install
-```
+## 🎨 3. Configure Frontend (`apps/web`)
 
-## Run the frontend
+1. In a separate terminal tab, go to the frontend directory:
+   ```bash
+   cd apps/web
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+4. Open your browser and navigate to `http://localhost:5173`.
 
-```bash
-cd apps/web
-npm run dev
-```
+---
 
-Open the browser at the local URL shown by Vite.
+## 🧪 4. Verify Local Setup
 
-## Run the backend
+- Health Check: `http://localhost:8000/api/health`
+- Web UI: Navigate between `/login`, `/register`, and `/` in your browser.
+- Run tests / build checks:
+  ```bash
+  # In apps/api
+  npm run build
+  ```
 
-```bash
-cd apps/api
-npm run dev
-```
+---
 
-If the backend is not yet complete, use `npm test` or the available scripts while the server is built out.
+## 🤝 Next Steps
 
-## Environment files
-
-Add your local environment variables in `.env` files for both `apps/web` and `apps/api` as needed.
-
-Create `.env.example` files for the public repository so contributors can copy the values.
-
-## Project layout
-
-```text
-praxys/
-├── apps/
-│   ├── web/       # frontend app
-│   └── api/       # backend app
-├── docs/          # public documentation
-├── dev_docs/      # internal development docs
-├── LICENSE
-└── README.md
-```
-
-## Useful commands
-
-- `npm run dev` — start the app in development mode
-- `npm run build` — build production artifacts
-- `npm run lint` — lint codebase
-- `npm test` — run tests
-
-## Notes for contributors
-
-Use `develop` as the integration branch and keep feature branches small and focused. Review `docs/contributing.md` for more details.
+- Check out [contributing.md](contributing.md) to understand our branching and pull request guidelines.
+- Explore [roadmap.md](roadmap.md) to see upcoming features.
