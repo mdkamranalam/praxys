@@ -2,20 +2,18 @@ import cors from "cors";
 import express from "express";
 
 import authRoutes from "./routes/auth.routes.js";
+import taskRoutes from "./routes/task.routes.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Base & Health check routes
 app.get("/", (req, res) => {
   res.send("✅ Praxys server is running...");
 });
 
-/**
- * GET /api/health
- */
 app.get("/api/health", (req, res) => {
   res.json({
     service: "praxys-api",
@@ -24,9 +22,8 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-/**
- * POST /api/auth/register
- */
+// API Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
 
 export default app;
