@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
+import { Request, Response, Router } from "express";
 import jwt from "jsonwebtoken";
-import { Router, Request, Response } from "express";
 
 import prisma from "../lib/prisma.js";
 
@@ -12,7 +12,8 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
-      return res.status(400).json({ message: "All fields are required." });
+      res.status(400).json({ message: "All fields are required." });
+      return;
     }
 
     const hashPassword = await bcrypt.hash(password, 10);
@@ -37,19 +38,22 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ message: "All fields are required." });
+      res.status(400).json({ message: "All fields are required." });
+      return;
     }
 
     const user = await prisma.user.findUnique({ where: { email } });
 
     if (!user) {
-      return res.status(401).json({ message: "User not found." });
+      res.status(401).json({ message: "User not found." });
+      return;
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      return res.status(401).json({ message: "Email or password are wrong." });
+      res.status(401).json({ message: "Email or password are wrong." });
+      return;
     }
 
     const token = jwt.sign(
